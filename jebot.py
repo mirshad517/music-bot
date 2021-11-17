@@ -46,7 +46,7 @@ Jebot = Client(
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
  #ImJanindu #JEBotZ
-    cap = "@JEBotZ"
+    cap = "@mlmmusics"
     url = message.text
     rkp = await message.reply("Processing...")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -122,13 +122,13 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
-                 caption=cap)  #JEBotZ
+                 caption=cap)  #mlmmusics
         await rkp.delete()
   
     
 @Jebot.on_message(filters.command("song") & ~filters.edited & filters.group)
 async def song(client, message):
-    cap = "@JEBotZ"
+    cap = "@dev_mirshad"
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
     if not url:
@@ -215,7 +215,7 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, I'm a Song Downloader Bot. A bot by @JEBotZ.
+               text="""<b>Hey There, ഞാൻ നിങ്ങൾക്ക് പാട്ടുകൾ തരാൻ വേണ്ടി ജനിച്ചവനാണ് 🤣 നിങ്ങൾക്ക് ആവശ്യമുള്ള പാട്ടുകൾ /song പാട്ടിന്റെ പേര് കൊടുക്കുക                                 NB:ഞാൻ സ്വല്പം സ്പീഡ് കുറവാണ് കുറച്ചൊക്കെ കാത്തിരിക്കണം ട്ടോ 🤣😂. A bot by @dev_mirshad.
 
 Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -247,14 +247,14 @@ Hit help button to find out more about how to use me</b>""",
             reply_to_message_id=message.message_id
         )
 
-@Jebot.on_message(filters.command("help"))
+@dev_mirshad.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
 
-@JEBotZ</b>""",
+@dev_mirshad </b>""",
             reply_to_message_id=message.message_id
         )
     else:
@@ -276,7 +276,7 @@ print(
     """
 Bot Started!
 
-Join @Infinity_BOTs
+Join @mlmmusics
 """
 )
 
